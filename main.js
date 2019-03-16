@@ -3,18 +3,31 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint;
 };
 
+const determineConverter = () =>{
+
+    
+};
+
 const buttonEvents = () => {
-    document.getElementById('convertBtn').addEventListener('click', buttonClick);
-    document.getElementById('clearBtn').addEventListener('click', buttonClick);
+    document.getElementById('convertBtn').addEventListener('click', determineConverter);
+    document.getElementById('tempInput').addEventListener('keydown', determineConverter);
+    document.getElementById('clearBtn').addEventListener('click', );
+    document.getElementById('radio').addEventListener('submit', function(event)
+    {
+        let data = new FormData(form);
+        let output = "";
+        for (const entry of data) {
+          output = entry[1];
+        };
+        console.log(output);
+        event.preventDefault();
+    }, false);
   };
 
-const input = document.querySelector('input');
-
-input.addEventListener('keydown', ?);
 
 const init = () => {
     buttonEvents();
-    
+
 }
 
 init();
